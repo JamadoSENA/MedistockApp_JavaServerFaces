@@ -9,7 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.faces.bean.ManagedBean;
+import javax.annotation.ManagedBean;
+//import javax.faces.bean.ManagedBean;
 
 /**
  *
@@ -35,10 +36,8 @@ public class UserBean {
         Connection cnx = DBConnection.DBConnection();  
         String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
         PreparedStatement ps = cnx.prepareStatement(sql);  
-        /*
         ps.setString(1, user.getEmail());
         ps.setString(2, user.getPassword());
-        */
         
         ResultSet rs = ps.executeQuery();
         
